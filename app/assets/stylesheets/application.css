@@ -13,3 +13,224 @@
  *= require_tree .
  *= require_self
  */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+ 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 全体 */
+body {
+  display: flex;
+}
+
+.nav {
+  background-color: #333333;
+  height: 100vh;
+  width: 27vw;
+  display: block;
+}
+
+.nav-menu {
+  margin: 0 auto;
+  width: 20vw;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.nav-menu a:hover {
+  background-color: #333366;
+  color: #6699FF;
+}
+
+.nav-link {
+  margin: 35px;
+}
+
+.tweet-link a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 40px;
+  border-radius: 25px;
+  font-size: 22px;
+  margin: 35px;
+  font-weight: bold;
+  background-color: #0099FF;
+}
+
+.tweet-link a:hover {
+  background-color: #0099CC;
+  color: white;
+}
+
+.main {
+  width: 45vw;
+  background-color: #333333;
+  border-left: white solid 1px;
+  border-right: white solid 1px;
+}
+
+.right-nav {
+  width: 28vw;
+  background-color: #333333;
+}
+
+.home-header {
+  position: sticky;
+  z-index: 100;
+  padding: 15px;
+  border-bottom: white solid 1px;
+}
+
+.home {
+  color: white;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.tweets {
+  overflow: scroll;
+  max-height: calc(100vh - 53px);
+}
+
+.user-icon {
+  display: inline-block;
+  position: relative;
+  border-radius: 50%;
+  background-color: #89baeb;
+  width: 1em;
+  height: 1em;
+  font-size: 50px;
+  overflow: hidden;
+  margin: 10px 15px;
+}
+
+.user-icon::before,
+.user-icon::after {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-color: #3388dd;
+    content: "";
+}
+.user-icon::before {
+    top: 0.15em;
+    width: 0.4em;
+    height: 0.4em;
+}
+.user-icon::after {
+    bottom: -0.4em;
+    width: 0.8em;
+    height: 0.8em;
+}
+
+.tweet {
+  min-height: 130px;
+  border-bottom: solid white 10px;
+}
+
+.home-tweet {
+  display: flex;
+  color: aliceblue;
+}
+
+.tweet-form {
+  margin-top: 25px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+}
+
+.tweet-send {
+  color: aliceblue;
+  display: block;
+  margin: 0 15px 15px auto;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 25px;
+  background-color: #3388dd;
+  border-radius: 30px;
+  width: 150px;
+  border: none;
+  outline: none;
+}
+
+.one-tweet {
+  border-bottom: white solid 1px;
+  padding: 0 0 10px 0;
+}
+
+.tweet-user {
+  display: flex;
+}
+
+.name-tweet {
+  max-width: 550px;
+}
+
+.user-name {
+  margin: 12px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.tweet-text {
+  color: white;
+  font-size: 16px;
+}

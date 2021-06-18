@@ -1,0 +1,42 @@
+<div class="home-header">
+  <div class="home">
+    ホーム
+  </div>
+</div>
+<div class="tweets">
+  <% if user_signed_in? %>
+    <%= form_with(model: @tweet, local: true) do |form| %>
+      <div class="tweet">
+        <div class="home-tweet">
+          <div class="user-icon">
+
+          </div>
+          <div>
+            <%= form.text_area :text, class: "tweet-form", placeholder: "いまどうしてる？", autocomplete: 'off', size: "47x2" %>
+          </div>
+        </div>
+        <div>
+          <%= form.submit "ツイートする", class: "tweet-send" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% @tweets.each do |tweet| %>
+    <div class="one-tweet">
+      <div class="tweet-user">
+        <div class="user-icon">
+
+        </div>
+        <div class="name-tweet">
+          <div class="user-name">
+            <%= tweet.user.nickname %>
+          </div>
+          <div class="tweet-text">
+            <%= tweet.text %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
