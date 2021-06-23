@@ -12,6 +12,9 @@
  *
  *= require_tree .
  *= require_self
+
+ *= require font-awesome
+
  */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -77,8 +80,8 @@ body {
 }
 
 .nav-menu {
-  margin: 0 auto;
-  width: 20vw;
+  margin: 0 0 0 70px;
+  
 }
 
 .nav-menu a {
@@ -96,16 +99,15 @@ body {
 }
 
 .nav-link {
-  margin: 35px;
+  margin: 40px 0;
 }
 
 .tweet-link a {
   text-decoration: none;
   color: white;
-  padding: 10px 40px;
+  padding: 10px 60px;
   border-radius: 25px;
   font-size: 22px;
-  margin: 35px;
   font-weight: bold;
   background-color: #0099FF;
 }
@@ -118,8 +120,8 @@ body {
 .main {
   width: 45vw;
   background-color: #333333;
-  border-left: white solid 1px;
-  border-right: white solid 1px;
+  border-left: #666666 solid 1px;
+  border-right: #666666 solid 1px;
 }
 
 .right-nav {
@@ -130,14 +132,16 @@ body {
 .home-header {
   position: sticky;
   z-index: 100;
-  padding: 15px;
-  border-bottom: white solid 1px;
+  border-bottom: #666666 solid 1px;
 }
 
 .home {
+  display: flex;
   color: white;
   font-size: 23px;
   font-weight: bold;
+  align-items: center;
+  margin: 15px;
 }
 
 .tweets {
@@ -179,7 +183,7 @@ body {
 
 .tweet {
   min-height: 130px;
-  border-bottom: solid white 10px;
+  border-bottom: solid #666666 10px;
 }
 
 .home-tweet {
@@ -198,8 +202,7 @@ body {
 
 .tweet-send {
   color: aliceblue;
-  display: block;
-  margin: 0 15px 15px auto;
+  margin: 15px 15px 15px 0;
   font-size: 15px;
   font-weight: bold;
   padding: 8px 25px;
@@ -208,10 +211,11 @@ body {
   width: 150px;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 .one-tweet {
-  border-bottom: white solid 1px;
+  border-bottom: #666666 solid 1px;
   padding: 0 0 10px 0;
 }
 
@@ -233,4 +237,66 @@ body {
 .tweet-text {
   color: white;
   font-size: 16px;
+}
+
+.back-btn {
+  margin-right: 30px;
+  color: #0099CC;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.back-btn:hover {
+  background-color: #333366;
+}
+
+.show-home {
+  display: flex;
+  color: white;
+  font-size: 23px;
+  font-weight: bold;
+  align-items: center;
+  margin: 5px 15px;
+}
+
+.show-link {
+  text-decoration: none !important;
+}
+
+.tweet-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image-btn {
+  margin-left: 100px;
+  font-size: 20px;
+  color: white;
+}
+
+.tweet-image {
+  background-color: #666666;
+  width: 540px;
+  max-height: 350px;
+  margin: 20px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.show-tweet-image {
+  background-color: #666666;
+  width: 540px;
+  max-height: 100%;
+  margin: 20px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }

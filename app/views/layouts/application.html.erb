@@ -13,31 +13,57 @@
     <div class="nav">
       <div class="nav-menu">
         <div class="nav-link">
-          <%= link_to "鳥さん", root_path %>
+          <%= link_to root_path do %>
+            <%= fa_icon "twitter lg" %>
+          <% end %>
         </div>
         <div class="nav-link">
-          <%= link_to "ホーム", root_path %>
+          <%= link_to root_path do %>
+            <%= fa_icon "home lg" %>
+            &ensp;ホーム
+          <% end %>
         </div>
         <div class="nav-link">
-          <a href="#">話題を検索</a>
+          <%= link_to root_path do %>
+            <%= fa_icon "comments lg" %>
+            &ensp;話題を検索
+          <% end %>
         </div>
         <div class="nav-link">
-          <a href="#">通知</a>
+          <%= link_to root_path do %>
+            <%= fa_icon "bell lg" %>
+            &ensp;通知
+          <% end %>
         </div>
         <div class="nav-link">
-          <a href="#">メッセージ</a>
+          <%= link_to root_path do %>
+            <%= fa_icon "envelope lg" %>
+            &ensp;話題を検索
+          <% end %>
         </div>
         <div class="nav-link">
-          <a href="#">ブックマーク</a>
+          <%= link_to root_path do %>
+            <%= fa_icon "bookmark lg" %>
+            &ensp;ブックマーク
+          <% end %>
         </div>
         <div class="nav-link">
-          <a href="#">リスト</a>
+          <%= link_to root_path do %>
+            <%= fa_icon "list lg" %>
+            &ensp;リスト
+          <% end %>
         </div>
         <div class="nav-link">
-          <a href="#">プロフィール</a>
+          <%= link_to root_path do %>
+            <%= fa_icon "user lg" %>
+            &ensp;プロフィール
+          <% end %>
         </div>
         <div class="nav-link">
-          <a href="#">もっと見る</a>
+          <%= link_to root_path do %>
+            <%= fa_icon "ellipsis-h lg" %>
+            &ensp;もっと見る
+          <% end %>
         </div>
         <div class="tweet-link">
           <a href="#">ツイートする</a>

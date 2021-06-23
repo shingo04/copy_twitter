@@ -15,7 +15,14 @@
             <%= form.text_area :text, class: "tweet-form", placeholder: "いまどうしてる？", autocomplete: 'off', size: "47x2" %>
           </div>
         </div>
-        <div>
+        <div class="tweet-btn">
+          <div class="image-btn">
+            <%= form.label :image, ".", for: "file-input", class: "fa fa-file-picture-o" %>
+            <%= form.file_field :image, id: "file-input", style: "display: none;" %>
+            <div id="image_preview">
+              
+            </div>
+          </div>
           <%= form.submit "ツイートする", class: "tweet-send" %>
         </div>
       </div>
@@ -23,20 +30,27 @@
   <% end %>
 
   <% @tweets.each do |tweet| %>
-    <div class="one-tweet">
-      <div class="tweet-user">
-        <div class="user-icon">
+    <%= link_to tweet_path(tweet), class: "show-link" do %>
+      <div class="one-tweet">
+        <div class="tweet-user">
+          <div class="user-icon">
 
-        </div>
-        <div class="name-tweet">
-          <div class="user-name">
-            <%= tweet.user.nickname %>
           </div>
-          <div class="tweet-text">
-            <%= tweet.text %>
+          <div class="name-tweet">
+            <div class="user-name">
+              <%= tweet.user.nickname %>
+            </div>
+            <div class="tweet-text">
+              <%= tweet.text %>
+            </div>
+            <% if tweet.image.attached? %>
+              <div class="tweet-image">
+                <%= image_tag tweet.image, width: '100%', height: '100%' %>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
