@@ -127,6 +127,7 @@ body {
 .right-nav {
   width: 28vw;
   background-color: #333333;
+  padding: 20px 0 0 20px;
 }
 
 .home-header {
@@ -299,4 +300,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.search-input {
+  width: 300px;
+  border: none;
+  outline: none;
+  background-color: #666666;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 27px;
+  font-size: 16px;
+}
+
+.search-input::placeholder {
+  color: #CCCCCC;
+}
+
+.btn {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 15px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #333366;
 }
