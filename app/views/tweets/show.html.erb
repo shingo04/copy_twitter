@@ -1,6 +1,6 @@
 <div class="home-header">
   <div class="show-home">
-    <%= link_to "←", root_path, class: "back-btn" %>
+    <%= link_to "←", :back, class: "back-btn" %>
     <div>スレッド</div>
   </div>
 </div>
@@ -14,7 +14,7 @@
         <%= @tweet.user.nickname %>
       </div>
       <div class="tweet-text">
-        <%= @tweet.text %>
+        <%= simple_format(h(@tweet.text)) %>
       </div>
       <% if @tweet.image.attached? %>
         <div class="show-tweet-image">

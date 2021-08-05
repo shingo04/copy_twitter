@@ -1,0 +1,39 @@
+
+  <div class="home-header">
+    <div class="show-user">
+      <%= link_to "←", :back, class: "back-btn" %>
+      <div>
+        <%= "#{@nickname}" %>
+        <p class="tweet-count">
+          <%= "#{@tweets.count}件のツイート" %>
+        </p>
+      </div>
+    </div>
+  </div>
+  
+<div class="tweets">
+  <% @tweets.each do |tweet| %>
+    <%= link_to tweet_path(tweet), class: "show-link" do %>
+      <div class="one-tweet">
+        <div class="tweet-user">
+          <div class="user-icon">
+
+          </div>
+          <div class="name-tweet">
+            <div class="user-name">
+              <%= tweet.user.nickname %>
+            </div>
+            <div class="tweet-text">
+              <%= simple_format(h(tweet.text)) %>
+            </div>
+            <% if tweet.image.attached? %>
+              <div class="tweet-image">
+                <%= image_tag tweet.image, width: '100%', height: '100%' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

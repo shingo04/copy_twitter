@@ -54,7 +54,7 @@
           <% end %>
         </div>
         <div class="nav-link">
-          <%= link_to root_path do %>
+          <%= link_to user_path(current_user) do %>
             <%= fa_icon "user lg" %>
             &ensp;プロフィール
           <% end %>
@@ -74,10 +74,12 @@
       <%= yield %>
     </div>
     <div class="right-nav">
-      <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
-        <%= form.text_field :keyword, placeholder: "キーワード検索", class: "search-input", autocomplete: 'off' %>
-        <%= button_tag type: "submit", class: "btn btn-default btn-s-md" do %>
-          <i class="fa fa-search"></i>
+      <% unless request.path.include?("search") %>
+        <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "キーワード検索", class: "search-input", autocomplete: 'off' %>
+          <%= button_tag type: "submit", class: "btn btn-default btn-s-md" do %>
+            <i class="fa fa-search"></i>
+          <% end %>
         <% end %>
       <% end %>
     </div>

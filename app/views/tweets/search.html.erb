@@ -1,0 +1,47 @@
+<div class="home-header">
+  <div class="show-home">
+    <%= link_to "←", :back, class: "back-btn" %>
+    <div>
+    <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "キーワード検索", class: "search-input-after", autocomplete: 'off' %>
+        <%= button_tag type: "submit", class: "btn btn-default btn-s-md" do %>
+          <i class="fa fa-search"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% if @tweets.present? %>
+<% @tweets.each do |tweet| %>
+  <%= link_to tweet_path(tweet), class: "show-link" do %>
+      <div class="one-tweet">
+        <div class="tweet-user">
+          <div class="user-icon">
+
+          </div>
+          <div class="name-tweet">
+            <div class="user-name">
+              <%= tweet.user.nickname %>
+            </div>
+            <div class="tweet-text">
+              <%= simple_format(h(tweet.text)) %>
+            </div>
+            <% if tweet.image.attached? %>
+              <div class="tweet-image">
+                <%= image_tag tweet.image, width: '100%', height: '100%' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <div class="no-search">
+    <%= "「#{params[:keyword]}」の検索結果はありません" %>
+  </div>
+  <p class="no-search-text">
+    入力した単語の検索結果はありません。単語の入力を間違えたか、センシティブと思われる内容が表示されない検索設定になっている可能性があります。
+  </p>
+<% end %>
